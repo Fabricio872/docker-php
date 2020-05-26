@@ -10,6 +10,8 @@ Contains php bash script for running php commands in container
  - post_max_size=256M
  - timezone=Europe/Bratislava
 
+> secondary nameserver is setted to 1.1.1.1 because of raspbian issues
+
 ## List of added packages:
 
  - pdo
@@ -19,3 +21,4 @@ Contains php bash script for running php commands in container
  - opcache
  - iconv
  - gd
+ - composer

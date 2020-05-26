@@ -21,3 +21,7 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
 
 RUN echo -e "memory_limit=512M\nupload_max_filesize=8M\npost_max_size=256M\ndate.timezone=Europe/Bratislava" >> /usr/local/etc/php/php.ini
+RUN echo -e "nameserver 1.1.1.1\n" > /etc/resolv.conf
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+RUN rm composer-setup.php
